@@ -6,3 +6,10 @@ This is a [python](https://www.python.org/) program that uses [wireshark's](http
 
 ## Why Do We Need This?
 We do not necessarily need this program/script. It is fun, cool, and interesting tool that should only be used for educational and entertainment purposes only. Information gathered or obtained through this script is publicly accessible information and should not be used for any illegal or nefarious activities. I only provided this script to make it easier present and obtain this information and I am not responsible for any actions or activities taken as a result of this program/script. There are many programs/scripts like this on internet and I hope you do not use them maliciously. This program/script is covered under the [MIT License](https://github.com/zackbradys/wireshark-geolocator/blob/main/LICENSE).
+
+## Prerequisites/Downloads
+You must have the following programs and/or applications installed in order for this script to run properly. If you do not know how to use these programs or do not know how to execute a program(s)/script(s), there are many tutorials on the web to help you.
+
+### Visual Studio (2019) - [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
+### Wireshark (v3.x) - [https://www.wireshark.org/#download](https://www.wireshark.org/#download)
+### Python (v3.x) - [https://www.python.org/downloads](https://www.python.org/downloads)
