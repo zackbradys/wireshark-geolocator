@@ -21,21 +21,31 @@ def determine_location(ip_address):
     location = reader.get(ip_address)
     
     try:
+      continent = location["continent"]["names"]["en"]
+    except:
+      continent = "Not found"
+      
+    try:
       country = location["country"]["names"]["en"]
     except:
-      country = "Not found."
+      country = "Not found"
 
     try:
       subdivision = location["subdivisions"][0]["names"]["en"]
     except:
-      subdivision = "Not found."    
+      subdivision = "Not found"    
 
     try:
       city = location["city"]["names"]["en"]
     except:
-      city = "Not found."
+      city = "Not found"
     
-    return country, subdivision, city
+    try:
+      postal = location["postal']
+    except:
+      postal = "Not found"
+    
+    return continent, country, subdivision, city, postal
 
 for line in iter(process.stdout.readline, b""):
     columns = str(line).split(" ")
@@ -54,13 +64,13 @@ for line in iter(process.stdout.readline, b""):
 
         try:
             country, subdivision, city = determine_location(source_ip)
-            print("Location Information:" + country + " | " + subdivision + " | " + city)
+            print("Location Information:" + continent + " | " + country + " | " + subdivision + " | " + city + " | " + postal)
         except:
             try:
                 true_ip = socket.gethostbyname(source_ip)
                 country, subdivision, city = determine_location(true_ip)
-                print("Location Information:" + country + " | " + subdivision + " | " + city)
+                print("Location Information:" + continent + " | " + country + " | " + subdivision + " | " + city + " | " + postal)
             except:
-                print("Not found.")
+                print("Not found")
                 
 # End Wireshark Geolocator Script
