@@ -37,7 +37,6 @@ def determine_location(ip_address):
     
     return country, subdivision, city
 
-
 for line in iter(process.stdout.readline, b""):
     columns = str(line).split(" ")
 
