@@ -1,2 +1,4 @@
-# wireshark-geolocator
-Simple python program using wireshark to locate users via their internet protocol addresses.
+# Wireshark Geolocator (Python)
+Simple [Python](https://www.python.org/) program using [Wireshark](https://www.wireshark.org/) and [MaxMind's GeoLite2](https://dev.maxmind.com/geoip/geoip2/geolite2/) to locate users via their internet protocol addresses.
+## How Does It Work?
+This is a [python](https://www.python.org/) program that uses [wireshark's](https://www.wireshark.org/) command line packet analyzer (aka [tshark](https://www.wireshark.org/docs/man-pages/tshark.html)) to intercept users internet protocol addresses and determine their approximate location (IP Address are inherently imprecise). Once the connection has started, the IP Address will be determined by analzying your network traffic with [wireshark/tshark](https://www.wireshark.org/). Once the IP Address is determined, this script will use [MaxMind's GeoLite2 databases](https://dev.maxmind.com/geoip/geoip2/geolite2/), to find their IP Address location information such as their country, state, and city (will be implementing postal code, latitude, and longitude soon). Once their IP Address and Location information has been determined, it will print the result and automatically update.
