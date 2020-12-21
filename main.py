@@ -1,4 +1,4 @@
-# Wireshark Geolocator
+# Wireshark Geolocator (Python)
 # Simple python program using wireshark's command line interface to intercept users internet protocol addresses and determine their approximate location (IP Address are inherently imprecise). 
 # Once the IP Address has been determined via wireshark, this script will use MaxMind's GeoIP2 databases, to find their location information such as their country, state, and city. 
 # Once their IP Address and Location has been determined, it will print the result.
