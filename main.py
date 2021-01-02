@@ -10,7 +10,7 @@ import socket, subprocess
 # cmd = r"C:\Program Files\Wireshark\tshark.exe -i Wi-Fi"
 
 # For wired adapter/interface use, comment the line below
-cmd = r"C:\Program Files\Wireshark\tshark.exe -i Ethernet"
+# cmd = r"C:\Program Files\Wireshark\tshark.exe -i Ethernet"
 
 # Start Wireshark Geolocator Script
 process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
