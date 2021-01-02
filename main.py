@@ -1,16 +1,16 @@
 # Wireshark Geolocator (Python)
 # Simple Python program using Wireshark and MaxMind's GeoLite2 to locate users via their internet protocol addresses.
 # Visit the GitHub Repository at https://github.com/zackbradys/wireshark-geolocator.
-# Last motified on 12/21/2020 by zackbradys
+# Last motified on 01/02/2021 by zackbradys
 
 from geolite2 import geolite2
 import socket, subprocess
 
-# For wireless interface use, uncomment the line below
-cmd = r"C:\Program Files\Wireshark\tshark.exe -i Wi-Fi"
+# For wireless adapter/interface use, uncomment the line below
+# cmd = r"C:\Program Files\Wireshark\tshark.exe -i Wi-Fi"
 
-# For wired interface use, comment the line below
-# cmd = r"C:\Program Files\Wireshark\tshark.exe -i Ethernet"
+# For wired adapter/interface use, comment the line below
+cmd = r"C:\Program Files\Wireshark\tshark.exe -i Ethernet"
 
 # Start Wireshark Geolocator Script
 process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -56,13 +56,14 @@ for line in iter(process.stdout.readline, b""):
 
         try:
             country, sub, city = determine_location(src_ip)
-            print(src_ip + " = " + "Location Info: " + country + ", " + sub + ", " + city)
+            print(src_ip + " = " + "Location Info: " + country + " | " + sub + " | " + city)
         except:
             try:
                 true_ip = socket.gethostbyname(src_ip)
                 country, sub, city = determine_location(true_ip)
-                print(src_ip + " = " + "Location Info: " + country + ", " + sub + ", " + city)
+                print(src_ip + " = " + "Location Info: " + country + " | " + sub + " | " + city)
             except:
                 print("Indeterminable")
 
+                
 # End Wireshark Geolocator Script
