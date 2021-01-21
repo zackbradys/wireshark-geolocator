@@ -1,7 +1,7 @@
 # Wireshark Geolocator (Python)
 # Simple Python program using Wireshark and MaxMind's GeoLite2 to locate users via their internet protocol addresses.
 # Visit the GitHub Repository at https://github.com/zackbradys/wireshark-geolocator.
-# Last motified on 01/02/2021 by zackbradys
+# Last Updated: 20 Jan 2021
 
 from geolite2 import geolite2
 import socket, subprocess
